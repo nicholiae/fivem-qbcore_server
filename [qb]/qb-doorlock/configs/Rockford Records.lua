@@ -1,0 +1,106 @@
+
+
+-- Front Doors created by Manish
+-- Config.DoorList['Rockford Records-Front Doors'] = {
+    -- pickable = true,
+    -- doorType = 'double',
+    -- doors = {
+        -- {objName = 662746527, objYaw = 54.395790100098, objCoords = vec3(-1016.506287, -267.109802, 39.271210)},
+        -- {objName = -10590885, objYaw = 55.231945037842, objCoords = vec3(-1015.003357, -264.978180, 39.271210)}
+    -- },
+    -- doorLabel = 'Door',
+    -- authorizedJobs = { ['rockrec'] = 0 },
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- distance = 3,
+-- }
+
+-- Lobby Doors created by Manish
+-- Config.DoorList['Rockford Records-Lobby Doors'] = {
+    -- pickable = true,
+    -- doorType = 'double',
+    -- doors = {
+        -- {objName = 1930160225, objYaw = 234.3957824707, objCoords = vec3(-999.919434, -270.386810, 39.192120)},
+        -- {objName = -1693304723, objYaw = 234.3957824707, objCoords = vec3(-998.408752, -268.277100, 39.192120)}
+    -- },
+    -- doorLabel = 'Door',
+    -- authorizedJobs = { ['rockrec'] = 0 },
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- distance = 3,
+-- }
+
+-- Lounge Back Doors created by Manish
+-- Config.DoorList['Rockford Records-Lounge Back Doors'] = {
+    -- pickable = true,
+    -- doorType = 'double',
+    -- doors = {
+        -- {objName = 1650276170, objYaw = 234.3957824707, objCoords = vec3(-995.669556, -261.347290, 39.190918)},
+        -- {objName = 1650276170, objYaw = 54.395790100098, objCoords = vec3(-997.176819, -263.458313, 39.190918)}
+    -- },
+    -- doorLabel = 'Door',
+    -- authorizedJobs = { ['rockrec'] = 0 },
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- distance = 3,
+-- }
+
+-- Garage Door created by Manish
+-- Config.DoorList['Rockford Records-Garage Door'] = {
+    -- pickable = true,
+    -- objYaw = 207.81909179688,
+    -- objCoords = vec3(-977.818970, -264.303619, 37.696705),
+    -- distance = 3,
+    -- fixText = false,
+    -- doorType = 'door',
+    -- objName = 363383944,
+    -- doorLabel = 'Door',
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- authorizedJobs = { ['rockrec'] = 0 },
+-- }
+
+-- Garage Back Door created by Manish
+-- Config.DoorList['Rockford Records-Garage Back Door'] = {
+    -- pickable = true,
+    -- objYaw = 207.73408508301,
+    -- objCoords = vec3(-986.065125, -256.875427, 38.631218),
+    -- distance = 3,
+    -- fixText = false,
+    -- doorType = 'door',
+    -- objName = -245685349,
+    -- doorLabel = 'Door',
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- authorizedJobs = { ['rockrec'] = 0 },
+-- }
+
+-- Back Door created by Manish
+-- Config.DoorList['Rockford Records-Back Door'] = {
+    -- pickable = true,
+    -- objYaw = 26.066831588745,
+    -- objCoords = vec3(-993.447510, -281.383759, 38.366135),
+    -- distance = 3,
+    -- fixText = false,
+    -- doorType = 'door',
+    -- objName = -1719935594,
+    -- doorLabel = 'Door',
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- authorizedJobs = { ['rockrec'] = 0 },
+-- }
+
+-- Main Office Door created by Manish
+-- Config.DoorList['Rockford Records-Main Office Door'] = {
+    -- pickable = true,
+    -- objYaw = 234.3957824707,
+    -- objCoords = vec3(-1007.132874, -270.340668, 45.022549),
+    -- distance = 3,
+    -- fixText = false,
+    -- doorType = 'door',
+    -- objName = -10590885,
+    -- doorLabel = 'Door',
+    -- locked = true,
+    -- doorRate = 1.0,
+    -- authorizedJobs = { ['rockrec'] = 0 },
+-- }

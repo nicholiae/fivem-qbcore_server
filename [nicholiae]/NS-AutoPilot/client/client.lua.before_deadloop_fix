@@ -1,0 +1,478 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+local AutoPilotOn = false
+local speed = 28.0
+local dStyle = 786603
+local driving = false
+local warned = false
+local wander = false
+local err44 = false
+local myjob = false
+local coord = nil
+local AutoPilotThread = nil
+
+local function DrawAdvancedNativeText(x,y,w,h,sc, text, r,g,b,a,font,jus)
+    SetTextFont(font)
+    SetTextScale(sc, sc)
+	N_0x4e096588b13ffeca(jus)
+    SetTextColour(r, g, b, a)
+    SetTextEntry("STRING")
+    AddTextComponentString(text)
+	DrawText(x - 0.1+w, y - 0.02+h)
+end
+
+local function AutoPilotStart()
+	CreateThread(function()
+		while AutoPilotOn do
+			local playerCoords = GetEntityCoords(ped)
+			local playerHeading = GetEntityHeading(ped)
+			local ped = PlayerPedId()
+			if IsPedInVehicle(ped, GetVehiclePedIsIn(ped, false), false) then
+				if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId()), -1) == PlayerPedId() then 
+					local VehHash = GetEntityModel(GetVehiclePedIsIn(PlayerPedId()))
+					local vehicleType = GetVehicleType(GetVehiclePedIsIn(PlayerPedId())) 
+					local vehicleList = {}
+					local vehCategory = ''
+					for model, vehicleData in pairs(QBCore.Shared.Vehicles) do
+						if vehicleData.hash == VehHash then
+							vehCategory = vehicleData.category
+						end
+					end
+					for _, CID in pairs(Config.Whitelisted) do
+						local PlayerData = QBCore.Functions.GetPlayerData()
+						local PlayerCID = PlayerData.citizenid
+						if CID == PlayerCID then
+							vehCategory = 'reserved'
+							vehicleType = 'automobile'
+							myjob = true
+						end
+					end
+					for _, job in pairs(Config.WhitelistedJobs) do
+						local PlayerData = QBCore.Functions.GetPlayerData()
+						local PlayerJob = PlayerData.job.name
+						if job == PlayerJob then
+							vehCategory = 'reserved'
+							vehicleType = 'automobile'
+							myjob = true
+						end
+					end
+					if vehCategory ~= 'reserved' then 
+						QBCore.Functions.Notify('Auto Pilot is for Reserved Vehicles Only', 'error')
+						Wait(2000)
+						AutoPilotOn = false 
+						QBCore.Functions.Notify('Auto Pilot toggled: '..tostring(AutoPilotOn), 'warning')
+						return 
+					else
+						if vehicleType == 'bike' or vehicleType == 'automobile' then
+							warned = false
+							if not (driving or wander) then
+								DrawAdvancedNativeText(0.97, 0.02, 0.005, 0.0028, 0.35, "Press [U] - Set AutoPilot to Current GPS Point", 100, 255, 255, 255, 0, 0)
+								if myjob then
+									DrawAdvancedNativeText(0.97, 0.045, 0.005, 0.0028, 0.35, "Press [backspace] - Set AutoPilot to Wander", 100, 255, 255, 255, 0, 0)
+								end
+							else
+								if not err44 then
+									if not wander then
+										DrawAdvancedNativeText(0.97, 0.02, 0.005, 0.0028, 0.35, "Going to Marker", 100, 255, 255, 255, 0, 0)
+									else
+										DrawAdvancedNativeText(0.97, 0.02, 0.005, 0.0028, 0.35, "Wandering", 100, 255, 255, 255, 0, 0)
+									end
+								else
+									if not wander then
+										DrawAdvancedNativeText(0.97, 0.02, 0.005, 0.0028, 0.35, "GOinG tO mArKEr", 255, 150, 150, 255, 0, 0)
+									else
+										DrawAdvancedNativeText(0.97, 0.02, 0.005, 0.0028, 0.35, "wAnDERiNg", 255, 150, 150, 255, 0, 0)
+									end
+								end
+								DrawAdvancedNativeText(0.97, 0.045, 0.005, 0.0028, 0.35, "+/- to increase and decrease speed", 100, 255, 255, 255, 0, 0)
+								DrawAdvancedNativeText(0.97, 0.09, 0.005, 0.0028, 0.35, "CurrentSpeed: "..tostring(speed).." MPH", 255, 0, 0, 255, 0, 0)
+							end
+							DrawAdvancedNativeText(0.97, 0.07, 0.005, 0.0028, 0.35, "Press [C] - Stop AutoPilot", 100, 255, 255, 255, 0, 0)
+							if IsControlJustPressed(0, 36) and (driving or wander) then -- 36 is the control index for Left Control
+								if IsWaypointActive() or wander then
+									if not wander then
+										driving = true
+									end
+									local blip = GetFirstBlipInfoId(8)
+									dStyle = 4
+									local blipX = 0.0
+									local blipY = 0.0
+									if (blip ~= 0) then
+										coord = GetBlipCoords(blip)
+										blipX = coord.x
+										blipY = coord.y
+										blipZ = coord.z
+										TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), blipX, blipY, blipZ, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+										QBCore.Functions.Notify('iNiTIaTinG AUToPiLoT Errr44', 'warning', 500)
+										err44 = true
+									else
+										if wander then
+											TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+											err44 = true
+											QBCore.Functions.Notify('iNiTIaTinG AUToPiLoT Errr44', 'warning', 500)
+										else
+											driving = false
+											coord = nil
+											ClearGpsPlayerWaypoint()
+											QBCore.Functions.Notify('Error getting GPS Point', 'error')
+										end
+									end
+								else
+									QBCore.Functions.Notify('Please Set a GPS Point', 'warning')
+								end
+							end
+							if IsControlJustPressed(0, 194) and not driving and not wander then -- 194 is the control index for 'backspace'
+								if not IsWaypointActive() then
+									-- driving = true
+									-- speed = speed + 5
+									-- local blip = GetFirstBlipInfoId(8)
+									-- local blipX = 0.0
+									-- local blipY = 0.0
+									-- if (blip ~= 0) then
+										-- coord = GetBlipCoords(blip)
+										-- blipX = coord.x
+										-- blipY = coord.y
+										-- blipZ = coord.z
+										-- TaskVehicleDriveToCoord(, , blipX, blipY, blipZ, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+									TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+									QBCore.Functions.Notify('Initiating Auto Pilot Wander', 'success', 500)
+									wander = true
+									-- else
+										-- driving = false
+										-- coord = nil
+										-- ClearGpsPlayerWaypoint()
+										-- QBCore.Functions.Notify('Error getting GPS Point', 'error')
+									-- end
+								else
+									QBCore.Functions.Notify('Please Remove Your GPS Point to use this', 'warning')
+								end
+							end
+							if IsControlJustPressed(0, 83) and (driving or wander) then -- 83 is the control index for '='
+								if IsWaypointActive() or wander then
+									if not wander then
+										driving = true
+									end
+									speed = speed + 5
+									
+									if speed > 160 then 
+										speed = 160 
+										QBCore.Functions.Notify('Max Speed Reached', 'warning', 500)
+									end
+									
+									local blip = GetFirstBlipInfoId(8)
+									local blipX = 0.0
+									local blipY = 0.0
+									if (blip ~= 0) then
+										coord = GetBlipCoords(blip)
+										blipX = coord.x
+										blipY = coord.y
+										blipZ = coord.z
+										if driving then
+											TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), blipX, blipY, blipZ, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+										end
+									else
+										if wander then
+											TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+										else
+											driving = false
+											coord = nil
+											ClearGpsPlayerWaypoint()
+											QBCore.Functions.Notify('Error getting GPS Point', 'error')
+										end
+									end
+									QBCore.Functions.Notify('Increasing Auto Pilot Speed', 'success', 500)
+								else
+									QBCore.Functions.Notify('Please Set a GPS Point', 'warning')
+								end
+							end
+							if IsControlJustPressed(0, 84) and (driving or wander) then -- 84 is the control index for '-'
+								if IsWaypointActive() or wander then
+									if not wander then
+										driving = true
+									end
+									speed = speed - 5
+									
+									if speed < 20 then 
+										speed = 20 
+										QBCore.Functions.Notify('Min Speed Reached', 'warning', 500)
+									end
+									
+									local blip = GetFirstBlipInfoId(8)
+									local blipX = 0.0
+									local blipY = 0.0
+									if (blip ~= 0) then
+										coord = GetBlipCoords(blip)
+										blipX = coord.x
+										blipY = coord.y
+										blipZ = coord.z
+										if driving then
+											TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), blipX, blipY, blipZ, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+										end
+									else
+										if wander then
+											TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+										else
+											driving = false
+											coord = nil
+											ClearGpsPlayerWaypoint()
+											QBCore.Functions.Notify('Error getting GPS Point', 'error')
+										end
+									end
+									QBCore.Functions.Notify('Decreasing Auto Pilot Speed', 'success', 500)
+								else
+									QBCore.Functions.Notify('Please Set a GPS Point', 'warning')
+								end
+							end
+							if IsControlJustPressed(0, 303) and not driving then -- 303 is the control index for 'U'
+								if IsWaypointActive() then
+									driving = true
+									local blip = GetFirstBlipInfoId(8)
+									local blipX = 0.0
+									local blipY = 0.0
+									if (blip ~= 0) then
+										coord = GetBlipCoords(blip)
+										blipX = coord.x
+										blipY = coord.y
+										blipZ = coord.z
+										TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), blipX, blipY, blipZ, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+										QBCore.Functions.Notify('Initiating Auto Pilot', 'success', 500)
+										err44 = false
+									else
+										driving = false
+										coord = nil
+										ClearGpsPlayerWaypoint()
+										QBCore.Functions.Notify('Error getting GPS Point', 'error')
+									end
+								else
+									QBCore.Functions.Notify('Please Set a GPS Point', 'warning')
+								end
+							end
+							if not wander then
+								if not IsWaypointActive() and driving then
+									playerCoords = GetEntityCoords(ped)
+									playerHeading = GetEntityHeading(ped)
+									ClearVehicleTasks(GetVehiclePedIsIn(ped, false))
+									ClearPedTasks(ped)
+									-- TaskVehiclePark(ped, GetVehiclePedIsIn(ped, false), playerCoords.x, playerCoords.y, playerCoords.z, playerHeading, 0, 120.0, true)
+									QBCore.Functions.Notify('Auto Pilot Parking', 'success', 1000)
+									coord = nil
+									driving = false
+									err44 = false
+									warned = false
+									dStyle = 786603
+									speed = 28.0
+									AutoPilotOn = false
+								end
+							end
+							if IsControlJustPressed(0, 253) and (driving or wander) then -- 253 is the control index for 'C'
+								playerCoords = GetEntityCoords(ped)
+								playerHeading = GetEntityHeading(ped)
+								ClearVehicleTasks(GetVehiclePedIsIn(ped, false))
+								ClearPedTasks(ped)
+								-- TaskVehiclePark(ped, GetVehiclePedIsIn(ped, false), playerCoords.x, playerCoords.y, playerCoords.z, playerHeading, 0, 20.0, true)
+								coord = nil
+								driving = false
+								wander = false
+								err44 = false
+								warned = false
+								dStyle = 786603
+								speed = 28.0
+								QBCore.Functions.Notify('Exited Auto Navigation', 'warning')
+							end
+						elseif not warned then
+							warned = true
+							QBCore.Functions.Notify('Auto Pilot not available for this VehicleType', 'warning')
+						end
+					end
+				else
+					coord = nil
+					driving = false
+					wander = false
+					err44 = false
+					warned = false
+					dStyle = 786603
+					speed = 28.0
+					AutoPilotOn = false
+					QBCore.Functions.Notify('Auto Pilot toggled: '..tostring(AutoPilotOn), 'success')
+				end
+				Wait(0)
+			end
+		end)
+end
+
+RegisterNetEvent('AutoPilot:client:toggleAutoPilot')
+AddEventHandler('AutoPilot:client:toggleAutoPilot', function()
+	
+	AutoPilotOn = not AutoPilotOn
+	if AutoPilotOn then AutoPilotStart() end
+	QBCore.Functions.Notify('Auto Pilot toggled: '..tostring(AutoPilotOn), 'success')
+	-- Update phone UI
+	TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = wander and 'wander' or 'gps', errr44 = err44})
+
+
+end)
+
+-- Phone App Events
+RegisterNetEvent('NS-AutoPilot:client:SpeedUp')
+AddEventHandler('NS-AutoPilot:client:SpeedUp', function()
+    if AutoPilotOn and (driving or wander) then
+        speed = speed + 5
+        
+        if speed > 160 then 
+            speed = 160 
+            QBCore.Functions.Notify('Max Speed Reached', 'warning', 500)
+        end
+        
+        local ped = PlayerPedId()
+        if wander then
+            TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+        elseif driving then
+            if coord then
+                TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), coord.x, coord.y, coord.z, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+            end
+        end
+        QBCore.Functions.Notify('Speed Increased to '..speed..' MPH', 'success', 500)
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = wander and 'wander' or 'gps', errr44 = err44})
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to adjust speed', 'error')
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:SpeedDown')
+AddEventHandler('NS-AutoPilot:client:SpeedDown', function()
+    if AutoPilotOn and (driving or wander) then
+        speed = speed - 5
+        
+        if speed < 20 then 
+            speed = 20 
+            QBCore.Functions.Notify('Min Speed Reached', 'warning', 500)
+        end
+        
+        local ped = PlayerPedId()
+        if wander then
+            TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+        elseif driving then
+            if coord then
+                TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), coord.x, coord.y, coord.z, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+            end
+        end
+        QBCore.Functions.Notify('Speed Decreased to '..speed..' MPH', 'success', 500)
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = wander and 'wander' or 'gps', errr44 = err44})
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to adjust speed', 'error')
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:SetGPSMode')
+AddEventHandler('NS-AutoPilot:client:SetGPSMode', function()
+    if AutoPilotOn then
+        wander = false
+        driving = false
+        coord = nil
+        ClearGpsPlayerWaypoint()
+        dStyle = 786603
+        speed = 28.0
+        QBCore.Functions.Notify('Switched to GPS Mode', 'success')
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = 'gps', errr44 = err44})
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to change modes', 'error')
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:SetWanderMode')
+AddEventHandler('NS-AutoPilot:client:SetWanderMode', function()
+    if AutoPilotOn then
+        wander = true
+        driving = false
+        coord = nil
+        ClearGpsPlayerWaypoint()
+        dStyle = 786603
+        speed = 28.0
+        local ped = PlayerPedId()
+        TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+        QBCore.Functions.Notify('Switched to Wander Mode', 'success')
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = 'wander', errr44 = err44})
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to change modes', 'error')
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:SetGPSDestination')
+AddEventHandler('NS-AutoPilot:client:SetGPSDestination', function()
+    if AutoPilotOn then
+        if IsWaypointActive() then
+            local blip = GetFirstBlipInfoId(8)
+            if (blip ~= 0) then
+                coord = GetBlipCoords(blip)
+                driving = true
+                wander = false
+                local ped = PlayerPedId()
+                TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), coord.x, coord.y, coord.z, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+                QBCore.Functions.Notify('Set GPS Destination', 'success')
+                
+                -- Update phone UI
+                TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = 'gps', errr44 = err44})
+            else
+                QBCore.Functions.Notify('Error getting GPS Point', 'error')
+            end
+        else
+            QBCore.Functions.Notify('No GPS waypoint set', 'error')
+        end
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to set GPS destination', 'error')
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:StopAutoPilot')
+AddEventHandler('NS-AutoPilot:client:StopAutoPilot', function()
+    if AutoPilotOn then
+        local ped = PlayerPedId()
+        ClearVehicleTasks(GetVehiclePedIsIn(ped, false))
+        ClearPedTasks(ped)
+        coord = nil
+        driving = false
+        wander = false
+        err44 = false
+        warned = false
+        dStyle = 786603
+        speed = 28.0
+        AutoPilotOn = false
+        QBCore.Functions.Notify('AutoPilot Stopped', 'warning')
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = false, speed = 28, mode = 'gps', errr44 = false})
+    end
+end)
+
+RegisterNetEvent('NS-AutoPilot:client:ToggleErrr44')
+AddEventHandler('NS-AutoPilot:client:ToggleErrr44', function()
+    if AutoPilotOn and (driving or wander) then
+        err44 = not err44
+        if err44 then
+            dStyle = 4
+            QBCore.Functions.Notify('Errr44 Mode Activated', 'error')
+        else
+            dStyle = 786603
+            QBCore.Functions.Notify('Errr44 Mode Deactivated', 'success')
+        end
+        
+        local ped = PlayerPedId()
+        if wander then
+            TaskVehicleDriveWander(ped, GetVehiclePedIsIn(ped, false), speed, dStyle)
+        elseif driving and coord then
+            TaskVehicleDriveToCoord(ped, GetVehiclePedIsIn(ped, false), coord.x, coord.y, coord.z, speed, 0, GetHashKey(GetVehiclePedIsIn(ped, false)), dStyle, 20.0, true)
+        end
+        
+        -- Update phone UI
+        TriggerEvent('qb-phone:client:UpdateAutoPilotUI', {active = AutoPilotOn, speed = speed, mode = wander and 'wander' or 'gps', errr44 = err44})
+    else
+        QBCore.Functions.Notify('AutoPilot must be active to toggle Errr44 mode', 'error')
+    end
+end)

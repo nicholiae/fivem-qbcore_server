@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Information</title>
+    <link rel="stylesheet" href="taxes.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="tax-container">
+        <!-- Header Section -->
+        <div class="tax-header">
+            <div class="header-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h1>Tax Information</h1>
+            <div class="close-btn" id="closeTaxUI">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <!-- Status Banner -->
+        <div class="status-banner" id="statusBanner">
+            <div class="status-icon" id="statusIcon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <div class="status-text" id="statusText">
+                Loading tax information...
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="tax-content">
+            <!-- Summary Card -->
+            <div class="summary-card">
+                <div class="card-header">
+                    <h2>Tax Summary</h2>
+                    <span class="month-badge" id="currentMonth">January 2025</span>
+                </div>
+                
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="label">Total Owed</span>
+                        <span class="value owed" id="totalOwed">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Already Paid</span>
+                        <span class="value paid" id="alreadyPaid">$0</span>
+                    </div>
+                    <div class="summary-item highlight">
+                        <span class="label">Net Amount</span>
+                        <span class="value net" id="netAmount">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Days Remaining</span>
+                        <span class="value days" id="daysRemaining">0</span>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <button class="pay-btn" id="payTaxesBtn">
+                        <i class="fas fa-credit-card"></i>
+                        Pay Taxes Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Breakdown Section -->
+            <div class="breakdown-section">
+                <div class="section-header">
+                    <h3>Tax Breakdown</h3>
+                    <button class="toggle-btn" id="toggleBreakdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                
+                <div class="breakdown-content" id="breakdownContent">
+                    <!-- Vehicles Section -->
+                    <div class="breakdown-category">
+                        <div class="category-header">
+                            <i class="fas fa-car"></i>
+                            <h4>Vehicles</h4>
+                            <span class="category-total" id="vehicleTotal">$0</span>
+                        </div>
+                        <div class="category-items" id="vehicleList">
+                            <div class="empty-state">No vehicles owned</div>
+                        </div>
+                    </div>
+
+                    <!-- Houses Section -->
+                    <div class="breakdown-category">
+                        <div class="category-header">
+                            <i class="fas fa-home"></i>
+                            <h4>Properties</h4>
+                            <span class="category-total" id="houseTotal">$0</span>
+                        </div>
+                        <div class="category-items" id="houseList">
+                            <div class="empty-state">No properties owned</div>
+                        </div>
+                    </div>
+
+                    <!-- Business Section -->
+                    <div class="breakdown-category">
+                        <div class="category-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Business Ownership</h4>
+                            <span class="category-total" id="businessTotal">$0</span>
+                        </div>
+                        <div class="category-items" id="businessList">
+                            <div class="empty-state">No business ownership</div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Calculation -->
+                    <div class="calculation-summary">
+                        <div class="calc-row">
+                            <span>Total Asset Value:</span>
+                            <span id="totalAssetValue">$0</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Tax Rate:</span>
+                            <span>7%</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Base Tax:</span>
+                            <span id="baseTax">$0</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Business Adjustments:</span>
+                            <span id="businessAdjustment">$0</span>
+                        </div>
+                        <div class="calc-row total">
+                            <span>Final Tax Amount:</span>
+                            <span id="finalTax">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <div class="info-card">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="info-content">
+                        <h4>How Taxes Work</h4>
+                        <ul>
+                            <li>Taxes are calculated at 7% of your total asset value</li>
+                            <li>Assets include all vehicles and properties you own</li>
+                            <li>Business owners pay an additional $500,000</li>
+                            <li>City job bosses receive a $1,000,000 tax credit</li>
+                            <li>Taxes must be paid by the end of each month</li>
+                            <li>Failure to pay may result in asset repossession</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="taxes.js"></script>
+</body>
+</html>

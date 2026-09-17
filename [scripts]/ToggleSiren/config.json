@@ -1,0 +1,48 @@
+{
+    /* -- Audio Sources -- */
+    /* Guide: By default sounds are included in the "" audio namespace/bank. If you are using additional siren packs you have to enter its audio bank name below. */
+    /* Specifying audio bank of a siren sound: By default siren sounds are looked up in the default game namespace. If you use a sound from a different audio bank add "!" and then the namespace to the sound name. */
+    /* Example: Default Game: "SIRENS_AIRHORN" from a soundpack "SIRENS_AIRHORN!MySuperSoundPack" */
+    "CustomAudioBanks": [
+        /*"Example"*/
+    ],
+    /* -- Audio Sources -- */
+
+    /* -- Airhorn -- */
+    "DefaultAirhorn": "SIRENS_AIRHORN",
+    "CustomAirhorns": {
+        "firetruk": "VEHICLES_HORNS_FIRETRUCK_WARNING"
+    },
+    /* -- Airhorn -- */
+
+    /* -- Siren Sounds -- */
+    "DefaultSounds": [ "VEHICLES_HORNS_SIREN_1", "VEHICLES_HORNS_SIREN_2", "VEHICLES_HORNS_POLICE_WARNING" ],
+    "CustomSounds": {
+        "firetruk": [
+            "RESIDENT_VEHICLES_SIREN_FIRETRUCK_WAIL_01",
+            "RESIDENT_VEHICLES_SIREN_FIRETRUCK_QUICK_01",
+            "VEHICLES_HORNS_FIRETRUCK_WARNING"
+        ],
+        "ambulan": [
+            "RESIDENT_VEHICLES_SIREN_WAIL_01",
+            "RESIDENT_VEHICLES_SIREN_QUICK_01",
+            "VEHICLES_HORNS_AMBULANCE_WARNING"
+        ],
+        "lguard": [
+            "RESIDENT_VEHICLES_SIREN_WAIL_01",
+            "RESIDENT_VEHICLES_SIREN_QUICK_01",
+            "VEHICLES_HORNS_AMBULANCE_WARNING"
+        ]
+    }, /* The default siren sounds (must always be three: primary, secondary, warning) */
+    /* -- Siren Sounds -- */
+
+    /* -- Spam Prevention -- */
+    "QueueDelay": 150, /* Delay in ms */
+    "QueueLimit": 25, /* Actions in queue before reset */
+    /* -- Spam Prevention -- */
+
+    /* -- Verification -- */
+    /* You can find your license key on https://garmingo.com/dashboard */
+    "License": "0c06-YBni-12Q4-Rxjl"
+    /* -- Verification -- */
+}

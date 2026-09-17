@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #161616ef; /* Fond de la notification */
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-left: 3px solid #ff005554; /* Bordure à gauche avec couleur */
+    display: flex;
+    width: auto;
+    margin: 3px;
+    opacity: 0;
+    text-rendering: optimizeLegibility; /* Ajout de cette ligne pour améliorer la netteté du texte */
+}
+
+.notification .type {
+    color: #ff0055;
+    font-size: 28px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.notification .message {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.notification.active {
+    opacity: 1;
+    animation: unfold 0.5s ease;
+}
+
+@keyframes unfold {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ... Vos autres styles restent inchangés */

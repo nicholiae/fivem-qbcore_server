@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShopVehicleDataArray>
+	<Vehicles>
+	<Item>
+		<lockHash>CU_VEH_chevy4d71</lockHash>
+		<modelNameHash>chevy4d71</modelNameHash>
+		<cost value="100"/>
+		<textLabel>chevy4d71</textLabel>
+		<textLabel></textLabel>
+	</Item>
+	</Vehicles>
+</ShopVehicleDataArray>

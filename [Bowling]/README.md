@@ -1,0 +1,1 @@
+If you have previously downloaded breze_bowling map, delete it and use the included map. Included map has interiorproxies that prevents flickering/disappearing players.

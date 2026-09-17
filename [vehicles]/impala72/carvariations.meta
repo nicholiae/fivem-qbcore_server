@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>impala72</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Antique White -->
+            131
+            131
+            0
+            156 
+            131
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Pewter Silver Poly -->
+            144
+            0
+            5
+            156 
+            3
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Dusk Gray Poly -->
+            2
+            0
+            5
+            156 
+            3
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Tuxedo Black -->
+            0 
+            107
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Ascot Blue Poly -->
+            68
+            68
+            5
+            156 
+            62
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mediterranean Blue -->
+            70
+            0
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mulsanne Blue Poly -->
+            73
+            131
+            68
+            156 
+            131
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Fathom Blue Poly -->
+            62
+            68
+            68
+            156 
+            62
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Spring Green Poly -->
+            54
+            0
+            53
+            156 
+            56
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Gulf Green Poly -->
+            100
+            50
+            100
+            156 
+            056
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Oasis Green Poly -->
+            102
+            37
+            52
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Sequoia Green Poly -->
+            50
+            50
+            50
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Covert Tan -->
+            107
+            107
+            0
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Placer Gold Poly -->
+            105
+            102
+            5
+            156 
+            97
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Desert Gold Poly -->
+            37
+            37
+            37
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cream Yellow -->
+            160
+            107
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Golden Brown Poly -->
+            109
+            131
+            109
+            156 
+            97
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Driftwood -->
+            98
+            0
+            0
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mohave Gold Poly -->
+            104
+            131
+            106
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Midnight Bronze Poly -->
+            101
+            0
+            103
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Aegean Brown -->
+            97 
+            107
+            98
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cranberry Red -->
+            27
+            27
+            0
+            156 
+            131
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Blue Plate</Name>
+            <Value value="50" />
+          </Item>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="50" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="2" />
+      <sirenSettings value="0" />
+    </Item>
+     <Item>
+      <modelName>impala72b</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Antique White -->
+            131
+            131
+            0
+            156 
+            131
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Pewter Silver Poly -->
+            144
+            0
+            5
+            156 
+            3
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Dusk Gray Poly -->
+            2
+            0
+            5
+            156 
+            3
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Tuxedo Black -->
+            0 
+            107
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Ascot Blue Poly -->
+            68
+            68
+            5
+            156 
+            62
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mediterranean Blue -->
+            70
+            0
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mulsanne Blue Poly -->
+            73
+            131
+            68
+            156 
+            131
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Fathom Blue Poly -->
+            62
+            68
+            68
+            156 
+            62
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Spring Green Poly -->
+            54
+            0
+            53
+            156 
+            56
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Gulf Green Poly -->
+            100
+            50
+            100
+            156 
+            056
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Oasis Green Poly -->
+            102
+            37
+            52
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Sequoia Green Poly -->
+            50
+            50
+            50
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Covert Tan -->
+            107
+            107
+            0
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Placer Gold Poly -->
+            105
+            102
+            5
+            156 
+            97
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Desert Gold Poly -->
+            37
+            37
+            37
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cream Yellow -->
+            160
+            107
+            0
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Golden Brown Poly -->
+            109
+            131
+            109
+            156 
+            97
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Driftwood -->
+            98
+            0
+            0
+            156 
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Mohave Gold Poly -->
+            104
+            131
+            106
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Midnight Bronze Poly -->
+            101
+            0
+            103
+            156 
+            0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Aegean Brown -->
+            97 
+            107
+            98
+            156 
+            107
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cranberry Red -->
+            27
+            27
+            0
+            156 
+            131
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Blue Plate</Name>
+            <Value value="50" />
+          </Item>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="50" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="2" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

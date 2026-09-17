@@ -1,0 +1,3 @@
+-- Target system for NS-BusService
+-- This file is intentionally empty as the system uses E key interactions
+-- but can be extended to support qb-target if desired

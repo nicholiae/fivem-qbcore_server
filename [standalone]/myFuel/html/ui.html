@@ -1,0 +1,451 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/programm.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+        <script src="js/jquery_3.4.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        
+        <script src="model/NumberFormat.js"></script>
+        <script src="model/Progress.js"></script>
+        <script src="model/WarehouseLevels.js"></script>
+        <script src="model/Owner_FuelType.js"></script>
+        <script src="model/BuyView.js"></script>
+        <script src="model/FuelView.js"></script>
+        <script src="model/OwnerView.js"></script>
+        <script src="model/SaleView.js"></script>
+        <script src="model/DriverView.js"></script>
+        
+        <script src="ui.js"></script>
+    </head>
+    <body>
+        <div id = "car_div" class = "driverViewBg colorWhite" style="display:none">
+            <div id = "car_div_speed_info" class="paddingtop">
+                <table class="table table-sm colorWhite">
+                    <tr>
+                        <td style="text-align:center;padding-bottom:0;">
+                            <strong style="font-size:2vh" id="car_div_currentspeed">49</strong> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="car_div_unit" style="text-align:center;padding-top:0;">
+                            km/h
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="car_div_fuelinfo" class="row" style="margin-left: 0 !important;">
+                <div class = "col-md-10">
+                    <div class="progress" style = "height:1.5vh;">
+                        <div id = "car_div_current_fuel_percentage_view" class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+                <div style="font-size:1.75vh" id="car_div_gas_pump_icon" class = "paddingbottom"><i class="fas fa-gas-pump"></i></div>
+            </div>
+        </div>
+        <div id="maindiv" class = "container bg-dark container-custom colorWhite"  style = "display:none">
+            <div id = "filling_up_view"  style = "display:none">
+                <div class = "leftdiv">
+                    <img id="companylogo_fillview" src = "./gfx/xero.png" class="logo_fillingupview"/>
+
+                    <div id = "id_fuelicon"><i class="fas fa-charging-station"></i></div>
+
+                    <table class = "table colorWhite">
+                        <tbody>
+                            <tr>
+                                <td id = "filling_up_view_label_fueltype" class = "bold">@label_fueltype</td>
+                                <td id = "filling_up_view_value_fueltype">@value_fueltype</td>
+                            </tr>
+                            <tr>
+                                <td id = "filling_up_view_label_price" class = "bold">@label_price</td>
+                                <td id = "filling_up_view_value_price">@value_price</td>
+                            </tr>
+                            <tr>
+                                <td id = "filling_up_view_label_stock"  class = "bold">@label_stock</td>
+                                <td id = "filling_up_view_value_stock">@value_stock</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="col-md-12 form-row" id = "fillingview_paymentmethod">
+                        <button id="bank_money" class="btn btn-primary active col-md-6"><span id = "label_bank_money">@bank_money</span></button>
+                        <button id="cash_money" class="btn btn-secondary col-md-6"><span id = "label_cash_money">@bank_money</span></button>
+                        <div id="fillingview_paymentmethod_info_society" class="col-md-12">@info_society</div>
+                    </div>
+
+                </div>
+                <div class = "rightdiv">
+                    <h2 id = "right_headline">
+                        @fill_up_vehicle
+                    </h2>
+
+
+                    <div style = "margin:2vh">
+                        <div class = "mb3">
+
+                            <h4 id = "filling_up_view_fuel_type">
+                                @current_fuel
+                            </h4>
+                            <h5 id = "current_liter">
+                                <span id = "current_liter_from">@from</span>
+                                /
+                                <span id = "current_liter_to">@to</span>
+                                <span id = "current_liter_unit">@unit</span>
+                                
+                            </h5>
+                            
+                            <div class="progress" style = "height:20px">
+                                <div id = "filling_progress" class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 id = "label_fill_up_to_price">
+                                @fill_up_to_price
+                            </h4>
+                            <div class="form-row">
+                                <button id="substract_one" class = "btn btn-sm btn-warning col-md-1" disabled>
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input id="amount_max" class="form-control colorWhite col-md-10" type="number" placeholder="$">
+                                <button id="add_one" class = "btn btn-sm btn-warning col-md-1">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div style = "margin-top:2vh">
+                    
+                            <button type="button" class="btn btn-lg btn-block btn-secondary" id="btn_fill_up_to_price" disabled>@fill_up_to_max_price</button>
+                            <button type="button" class="btn btn-lg btn-block btn-secondary" id="btn_fill_up_to_max">@fill_up_to_max</button>
+                            <button type="button" class="btn btn-lg btn-block btn-danger" id="stop_filling">@end_filling_up</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id = "admin_view" style = "display:none">
+                <img id="companylogo_adminview" src = "./gfx/xero.png" class="logo_adminview"/>
+                <button type="button" id = "closewindow" class="btn btn-danger closeButton">X</button>
+                <div class = "p1 fontHeadline centered">
+                    <span id = "headlne_adminview">@myGasStation</span>
+                </div>
+                <div class = "leftdiv">
+                    <ul id = "static_admin_entries">
+                        <li id = "list_overview">@overview</li>
+                        <li id = "list_upgrades">@upgrades</li>
+                        <li id = "list_checkout">@checkout</li>
+                        <li id = "list_cashbook">@cash book</li>
+                    </ul>
+                    <ul id = "fuel_type_entries">
+                    </ul>
+
+                    <button id="admin_view_sale" style="margin-top: 10vh;" class = "btn btn-danger btn-block">@sale</button>
+                </div>
+                <div id = "adminpanel_right" class = "rightdiv">
+                    <div id = "div_overview" style = "display:none">
+
+                        <div class="row rowCustom">
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_balance_name">@balance</h6>
+                                    <span id = "overview_balance_value">@balance_value</span>
+                                </div>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_income_name">@income</h6>
+                                    <span id = "overview_income_value">@income_value</span>
+                                </div>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_expenses_name">@expenses</h6>
+                                    <span id = "overview_expenses_value">@expenses_value</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "overview_fuel_types">
+                        </div>
+                    </div>
+                        
+                    <div id = "overview_upgrades">
+                        <div class="row rowCustom">
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview levelup-card">
+                                    <div class = "levelup-icon">
+                                        <i class="fas fa-warehouse"></i>
+                                    </div>
+                                    <h6 class="fw-normal mt-0" id = "warehouse_updates_headline">@warehouselevel</h6>
+                                    <div id = "warehouse_updates_information">
+                                        info level1<br>
+                                        info level2<br>
+                                        info level3<br>
+                                        info level4<br>
+                                        info level5<br>
+                                    </div>
+                                    <br>
+                                    <p id = "warehouse_updates_currentlevel">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </p>
+                                    <button class = "btn btn-primary btn-block" id = "warehouse_updates_levelup">@levelup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div id = "overview_checkout">
+                        <div class="row rowCustom">
+                            <div class = "col-md-12">
+                                <div class = "card bg-dark card-portalview">
+                                    <i id = "overview_checkout_icon" class="fas fa-money-check-alt floatRight"></i>
+                                    <span class = "fs-large"  id = "overview_checkout_currentcash">@currentcash</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id = "overview_checkout_amount_label">@money_deposit_payout</div>
+                        
+                        <input type="number" class="form-control colorWhite textleft" id="overview_checkout_amount" placeholder="$">
+
+                        
+                        <div class="form-row margintop">
+                            <div class="col-md-6">
+                                <button class = "btn btn-primary btn-block" id = "overview_checkout_deposit" disabled>@deposit</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class = "btn btn-danger btn-block" id = "overview_checkout_payout" disabled>@payout</button>
+                            </div>
+                        </div>
+
+                    </div>
+                        
+                    <div id = "overview_cashbook">
+                        <table id = "overview_cashbook_table" class = "table table-dark">
+                            <thead class = "stickyheader">
+                                <tr>
+                                    <th id = "overview_cashbook_th_type">
+                                        @type
+                                    </th>
+                                    <th id = "overview_cashbook_th_detail">
+                                        @detail
+                                    </th>
+                                    <th id = "overview_cashbook_th_amount">
+                                        @amount
+                                    </th>
+                                    <th id = "overview_cashbook_th_money">
+                                        @money
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>                       
+                    </div>
+                        
+                    <div id = "overview_fuel">
+                        
+                        <h4 id = "fueloverview_headline">
+                            @headline
+                        </h4>
+
+
+                        <div class="row rowCustom">
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_fuel_competitor_min_name">@competitor_min_name</h6>
+                                    <span id = "overview_fuel_competitor_min_value">@competitor_min_value</span>
+                                </div>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_fuel_competitor_max_name">@competitor_max_name</h6>
+                                    <span id = "overview_fuel_competitor_max_value">@competitor_max_value</span>
+                                </div>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "card bg-dark card-portalview">
+                                    <h6 class="fw-normal mt-0" id = "overview_fuel_competitor_avarage_name">@competitor_avarage_name</h6>
+                                    <span id = "overview_fuel_competitor_avarage_value">@competitor_avarage_value</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id = "fueloverview_price">
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label id = "fueloverview_price_labelcurrentprice" for="fueloverview_price_currentprice">@price</label>
+                                    <input type="number" class="form-control colorWhite textleft" id="fueloverview_price_currentprice" placeholder="$" readonly>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label id = "fueloverview_price_labelnewprice" for="fueloverview_price_newprice">@newprice</label>
+                                    <input type="number" class="form-control colorWhite textleft" id="fueloverview_price_newprice" placeholder="$">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="fueloverview_price_save">#</label>
+                                    <button class = "btn btn-primary btn-block" id = "fueloverview_price_save">@save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id = "fueloverview_stock">
+                            <div class="row">                            
+                                <div class="col-md-2" style = "padding-right:0px;">
+                                    <div id = "fueloverview_currentstock" style = "text-align:right">
+                                        @stockcurrent
+                                    </div>
+                                </div>
+                                <div class = "col-md-8">
+                                    <div class="progress" style = "height:100%;">
+                                        <div id = "fueloverview_currentpercentage" class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div id = "fueloverview_maxstock" class="col-md-2" style = "padding-left: 0px;">
+                                    @stockmax
+                                </div>
+                            </div>
+
+                            <div id = "element_fueloverview_import" class="form-row margintop" >
+                                <div class="form-group col-md-4">
+                                    <label id = "fueloverview_stock_labeltobuy" for="fueloverview_stock_tobuy">@amounttobuy</label>
+                                    <input type="number" class="form-control colorWhite textleft" id="fueloverview_stock_tobuy" placeholder="0">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label id = "fueloverview_stock_labeltobuy_price" for="fueloverview_stock_tobuy_price">@price</label>
+                                    <input type="number" class="form-control colorWhite textleft" id="fueloverview_stock_tobuy_price" placeholder="$" readonly>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="fueloverview_do_order">#</label>
+                                    <button class = "btn btn-primary btn-block" id = "fueloverview_do_order">@order</button>
+                                </div>
+                            </div>
+
+                            <div id="element_fueloverview_do_mission" class="form-row margintop">
+                                <button class = "btn btn-warning btn-block" id = "fueloverview_do_mission">@mission</button>
+                            </div>
+
+                            
+                            <div id = "element_fueloverview_importitems" class="row form-row margintop" style="padding-top:1vh !important">
+                                <div class="col-md-4">
+                                    <button class = "btn btn-info btn-block" id = "element_fueloverview_importitems_0" data-index = "">@item</button>
+                                </div>
+                                <div  class="col-md-4">
+                                    <button class = "btn btn-info btn-block" id = "element_fueloverview_importitems_1" data-index = "">@item</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class = "btn btn-info btn-block" id = "element_fueloverview_importitems_2" data-index = "">@item</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id = "id_admin_footer" >
+                        
+                        <span style="float:right;margin-right:2vw" id="cashbook_note">@last_x_entries</span>
+                    </div>
+                </div>
+            </div>
+            <div id = "buy_view"  style = "text-align: center; display:none"> 
+                
+                <img id="companylogo_buyview" src = "./gfx/xero.png" class="logo_sellbuy"/>
+                
+                <div class="alert alert-danger" id = "buy_view_missing_money" style="display:none;margin-top:2vh;">
+                </div>
+
+                <h2 id = "buy_view_headline">
+                    
+                </h2>
+                <div id = "buy_view_infotext">  
+                    
+                </div>
+
+                
+                <div style = "margin-top:2vh" class="form-row">
+                    
+                    <span class = "col-md-2"></span>
+                    <button id="gas_Station_buy_cancel" class = "btn btn btn-primary col-md-3">
+                        
+                    </button>
+                    <span class = "col-md-2"></span>
+                    <button id="gas_Station_buy" class = "btn btn btn-warning col-md-3">
+                        
+                    </button>
+                    <span class = "col-md-2"></span>
+                </div>
+            </div> 
+            <div id = "sale_view"  style = "text-align: center; display:none"> 
+                <img id="companylogo_saleview" src = "./gfx/xero.png" class="logo_sellbuy"/>
+
+
+                <h2 id = "sale_view_headline">
+                    
+                </h2>
+                <div id = "sale_view_infotext">  
+                    
+                </div>
+
+                
+                <div style = "margin-top:2vh" class="form-row">
+                    
+                    <span class = "col-md-2"></span>
+                    <button id="gas_Station_sell_cancel" class = "btn btn btn-primary col-md-3">
+                        
+                    </button>
+                    <span class = "col-md-2"></span>
+                    <button id="gas_Station_sell" class = "btn btn btn-warning col-md-3">
+                        
+                    </button>
+                    <span class = "col-md-2"></span>
+                </div>
+            </div> 
+            <div id = "no_fuel_view"  style = "text-align: center; display:none"> 
+                <img id="companylogo_no_fuel_view" src = "./gfx/xero.png" class="logo_sellbuy"/>
+                <h2 id = "no_fuel_view_headline">
+                    
+                </h2>
+                <div id = "no_fuel_view_infotext">  
+                    
+                </div>
+
+                
+                <div style = "margin-top:2vh" class="form-row">
+                    
+                    <span class = "col-md-4"></span>
+                    <button id="no_fuel_view_ok" class = "btn btn btn-warning col-md-4">
+                        OK 
+                    </button>
+                    <span class = "col-md-4"></span>
+                </div>
+            </div> 
+            
+        </div>
+
+        <div id="item-amount-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                  <h5 class="modal-title" id = "item-amount-modal-title">{{title}}</h5>
+                </div>
+                <div class="modal-body">
+                    <input type="number" min="0" step="1" style="border:1px solid gray !important" class="form-control colorWhite textleft" id="item-amount-modal-amount" placeholder=""/>
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" class="btn btn-secondary" id="item-amount-modal-cancel">{{cancel}}</button>
+                  <button type="button" class="btn btn-primary" id="item-amount-modal-save">{{save}}</button>
+                </div>
+              </div>
+            </div>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting System V2 - Enhanced</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="display: none;">
+    <div id="crafting-container" class="crafting-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🔧 Crafting System</h1>
+            <p id="bench-name">Modern Crafting Interface</p>
+            <span id="bonus-zone-indicator" class="bonus-indicator" style="display: none;">⚡ BONUS ZONE ACTIVE</span>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-label">Player XP</div>
+                <div class="stat-value" id="player-xp-value">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Total Recipes</div>
+                <div class="stat-value" id="total-recipes">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Available</div>
+                <div class="stat-value" id="available-recipes">0</div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" id="filter-all" onclick="setFilter('all')">All Recipes</button>
+            <button class="filter-btn filter-toggle" id="availableToggle" onclick="toggleAvailableFilter()">
+                <span class="toggle-icon">☐</span> Available Only
+            </button>
+        </div>
+
+        <!-- Proficiency Levels (Now Clickable Bench Filters) -->
+        <div class="proficiency-levels" id="bench-filters">
+            <!-- Bench filters will be dynamically generated -->
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="recipe-search" class="search-input" placeholder="🔍 Search recipes by name...">
+        </div>
+
+        <!-- Recipes Grid -->
+        <div id="recipe-grid" class="recipes-grid">
+            <!-- Recipe cards will be dynamically generated here -->
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Press <strong>ESC</strong> to close the crafting menu</p>
+        </div>
+    </div>
+
+    <script src="js/ui.js"></script>
+    <script src="js/crafting.js"></script>
+</body>
+</html>

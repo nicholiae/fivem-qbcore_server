@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SInteriorOrderData>
+	<startFrom value="2213" />
+	<proxies>
+		<!-- Unknown -->
+		<Item>apa_ch2_03</Item>
+		<Item>cs1_08_grass_0</Item>
+		<Item>esperiment</Item>
+		<Item>esterni</Item>
+		<Item>hei_bh1_46b_strm_0</Item>
+		<Item>hei_bh1_48_long_0</Item>
+		<Item>hei_cs1_08</Item>
+		<Item>hei_cs1_08_critical_1</Item>
+		<Item>hei_cs1_08_grass_0</Item>
+		<Item>hei_cs1_08_long_1</Item>
+		<Item>hei_cs1_08_strm_1</Item>
+		<Item>hei_cs1_14</Item>
+		<Item>hei_cs1_roads_critical_0</Item>
+		<Item>hei_cs3_01</Item>
+		<Item>moto_brutalhome_distantlights</Item>
+		<Item>moto_brutalhome_lodlights</Item>
+		<Item>moto_brutalisthome_pos</Item>
+		<Item>mto_brutalhome_milo_2</Item>
+		<Item>studio_pos</Item>
+	</proxies>
+</SInteriorOrderData>

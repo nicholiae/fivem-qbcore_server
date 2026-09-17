@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CWeaponComponentInfoBlob>
+  <Data>
+  </Data>
+  <Infos>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_FNX_CLIP_01</Name>
+      <Model>w_pi_fnx_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_HPST_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <ClipSize value="18" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_FNX_CLIP_02</Name>
+      <Model>w_pi_fnx_mag2</Model>
+      <LocName>WCT_CLIP2</LocName>
+      <LocDesc>WCD_HPST_CLIP2</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="true" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="33" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <ClipSize value="36" />
+      <ReloadData ref="RELOAD_LARGE_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentVariantModelInfo">
+      <Name>COMPONENT_FNX_VARMOD_LUXE</Name>
+      <Model>w_pi_fnx_Luxe</Model>
+      <LocName>WCT_INVALID</LocName>
+      <LocDesc>WCD_INVALID</LocDesc>
+      <AttachBone />
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="false" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+	  <TintIndexOverride value="7"/>
+	  <ExtraComponents>
+		<Item>
+		  <ComponentName>COMPONENT_FNX_CLIP_01</ComponentName>
+		  <ComponentModel>w_pi_fnx_mag1</ComponentModel>
+		</Item>
+		<Item>
+		  <ComponentName>COMPONENT_FNX_CLIP_02</ComponentName>
+		  <ComponentModel>w_pi_fnx_mag2</ComponentModel>
+		</Item>
+		<Item>
+		  <ComponentName>COMPONENT_AT_FNX_FLSH</ComponentName>
+		  <ComponentModel>w_at_fnx_flsh</ComponentModel>
+		</Item>
+		<Item>
+		  <ComponentName>COMPONENT_AT_FNX_SUPP</ComponentName>
+		  <ComponentModel>w_at_fnx_supp</ComponentModel>
+		</Item>
+	  </ExtraComponents>
+    </Item>
+  </Infos>
+  <InfoBlobName>Heavy Pistol Template</InfoBlobName>
+</CWeaponComponentInfoBlob>

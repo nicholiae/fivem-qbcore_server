@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Companion</title>
+    <link rel="stylesheet" href="selection-menu.css">
+</head>
+<body>
+    <div class="menu-container" style="display: none;">
+        <div class="menu-header">
+            <h1 class="menu-title">Select Your Companion</h1>
+            <p class="menu-subtitle">Choose from your available contacts</p>
+        </div>
+
+        <div class="prostitutes-grid" id="prostitutesGrid">
+            <!-- Prostitute cards will be dynamically generated here -->
+        </div>
+
+        <div class="menu-footer">
+            <button class="btn-close" onclick="closeMenu()">
+                <span>Close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Prostitute Card Template -->
+    <template id="prostituteCardTemplate">
+        <div class="prostitute-card" data-model="">
+            <div class="card-header">
+                <div class="profile-image">
+                    <img src="" alt="Profile">
+                    <div class="tier-badge">
+                        <span class="tier-icon">★</span>
+                        <span class="tier-text"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                <div class="name-section">
+                    <h2 class="prostitute-name"></h2>
+                    <p class="prostitute-nickname"></p>
+                </div>
+
+                <div class="personality-section">
+                    <span class="personality-badge"></span>
+                </div>
+
+                <div class="description-section">
+                    <p class="description-text"></p>
+                </div>
+
+                <div class="reputation-section">
+                    <div class="rep-header">
+                        <span class="rep-label">Reputation</span>
+                        <span class="rep-value"></span>
+                    </div>
+                    <div class="rep-bar-container">
+                        <div class="rep-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-icon">💰</span>
+                        <div class="stat-content">
+                            <span class="stat-label">Price</span>
+                            <span class="stat-value price-value"></span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <div class="stat-content">
+                            <span class="stat-label">Sessions</span>
+                            <span class="stat-value sessions-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="selection-menu.js"></script>
+</body>
+</html>

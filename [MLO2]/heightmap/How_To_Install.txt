@@ -1,0 +1,1 @@
+Put the heightmap folder inside your server resource folder and make sure you start heightmap inside your server cfg. Thanks.

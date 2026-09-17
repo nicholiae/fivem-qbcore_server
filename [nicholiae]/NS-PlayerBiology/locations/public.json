@@ -1,0 +1,232 @@
+[
+    {
+        "createdBy": "Nicholiae",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -712.4153442382813,
+            "z": 19.91935920715332,
+            "x": -947.1555786132813
+        },
+        "targetCoords": {
+            "y": -712.4153442382813,
+            "z": 19.91935920715332,
+            "x": -947.1555786132813
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2025-11-01 23:02:25",
+        "heading": 98.99449157714844,
+        "id": 1,
+        "returnCoords": {
+            "y": -712.4153442382813,
+            "z": 19.91935920715332,
+            "x": -947.1555786132813
+        }
+    },
+    {
+        "createdBy": "King Bones",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -878.5152587890625,
+            "z": 71.00598907470703,
+            "x": 1252.6981201171876
+        },
+        "targetCoords": {
+            "y": -878.5152587890625,
+            "z": 71.00598907470703,
+            "x": 1252.6981201171876
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2025-11-03 19:02:10",
+        "heading": 168.09812927246098,
+        "id": 2,
+        "returnCoords": {
+            "y": -878.5152587890625,
+            "z": 71.00598907470703,
+            "x": 1252.6981201171876
+        }
+    },
+    {
+        "createdBy": "Nicholiae",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -184.1519775390625,
+            "z": 38.24292755126953,
+            "x": -517.1265258789063
+        },
+        "targetCoords": {
+            "y": -184.1519775390625,
+            "z": 38.24292755126953,
+            "x": -517.1265258789063
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2025-11-04 02:30:15",
+        "heading": 301.97900390625,
+        "id": 3,
+        "returnCoords": {
+            "y": -184.1519775390625,
+            "z": 38.24292755126953,
+            "x": -517.1265258789063
+        }
+    },
+    {
+        "createdBy": "Rip Flawless",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -2070.452392578125,
+            "z": 21.41829872131347,
+            "x": 406.5380859375
+        },
+        "targetCoords": {
+            "y": -2070.452392578125,
+            "z": 21.41829872131347,
+            "x": 406.5380859375
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-03-29 02:04:50",
+        "heading": 37.9390983581543,
+        "id": 4,
+        "returnCoords": {
+            "y": -2070.452392578125,
+            "z": 21.41829872131347,
+            "x": 406.5380859375
+        }
+    },
+    {
+        "createdBy": "Rip Flawless",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -3163.282470703125,
+            "z": 5.9798879623413,
+            "x": 784.9246215820313
+        },
+        "targetCoords": {
+            "y": -3163.282470703125,
+            "z": 5.9798879623413,
+            "x": 784.9246215820313
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-03-29 18:09:04",
+        "heading": 121.12898254394533,
+        "id": 5,
+        "returnCoords": {
+            "y": -3163.282470703125,
+            "z": 5.9798879623413,
+            "x": 784.9246215820313
+        }
+    },
+    {
+        "createdBy": "Sheriff",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": 5994.107421875,
+            "z": 31.38864707946777,
+            "x": -430.9561767578125
+        },
+        "targetCoords": {
+            "y": 5994.107421875,
+            "z": 31.38864707946777,
+            "x": -430.9561767578125
+        },
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-04-08 22:25:19",
+        "heading": 264.3320617675781,
+        "id": 6,
+        "returnCoords": {
+            "y": 5994.107421875,
+            "z": 31.38864707946777,
+            "x": -430.9561767578125
+        }
+    },
+    {
+        "createdBy": "Sheriff",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": 6003.3623046875,
+            "z": 31.38873672485351,
+            "x": -442.6118469238281
+        },
+        "heading": 219.7148895263672,
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-04-12 18:27:53",
+        "targetCoords": {
+            "y": 6003.3623046875,
+            "z": 31.38873672485351,
+            "x": -442.6118469238281
+        },
+        "id": 7,
+        "returnCoords": {
+            "y": 6003.3623046875,
+            "z": 31.38873672485351,
+            "x": -442.6118469238281
+        }
+    },
+    {
+        "createdBy": "Sheriff",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": 3690.187744140625,
+            "z": 34.26703262329101,
+            "x": 1848.4429931640626
+        },
+        "heading": 26.1439151763916,
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-04-12 19:36:20",
+        "targetCoords": {
+            "y": 3690.187744140625,
+            "z": 34.26703262329101,
+            "x": 1848.4429931640626
+        },
+        "id": 8,
+        "returnCoords": {
+            "y": 3690.187744140625,
+            "z": 34.26703262329101,
+            "x": 1848.4429931640626
+        }
+    },
+    {
+        "createdBy": "Bones",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": -361.5069274902344,
+            "z": 32.75183868408203,
+            "x": -182.4947204589844
+        },
+        "heading": 45.2210464477539,
+        "animName": "sit_sofa_base",
+        "createdAt": "2026-04-16 21:02:27",
+        "targetCoords": {
+            "y": -361.5069274902344,
+            "z": 32.75183868408203,
+            "x": -182.4947204589844
+        },
+        "id": 9,
+        "returnCoords": {
+            "y": -361.5069274902344,
+            "z": 32.75183868408203,
+            "x": -182.4947204589844
+        }
+    },
+    {
+        "createdBy": "Bones",
+        "animDict": "timetable@michael@on_sofabase",
+        "playerCoords": {
+            "y": 264.36590576171877,
+            "z": 83.14471435546875,
+            "x": -458.1773986816406
+        },
+        "targetCoords": {
+            "y": 264.36590576171877,
+            "z": 83.14471435546875,
+            "x": -458.1773986816406
+        },
+        "heading": 349.64599609375,
+        "createdAt": "2026-04-20 20:31:14",
+        "animName": "sit_sofa_base",
+        "id": 10,
+        "returnCoords": {
+            "y": 264.36590576171877,
+            "z": 83.14471435546875,
+            "x": -458.1773986816406
+        }
+    }
+]

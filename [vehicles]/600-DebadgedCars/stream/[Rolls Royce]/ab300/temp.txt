@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHandlingDataMgr>
+  <HandlingData>
+    <Item type="CHandlingData">
+      <handlingName>ab300</handlingName>
+<fMass value="1185.0" />
+			<fInitialDragCoeff value="2.0" />
+			<fDownforceModifier value="0.0" />
+			<fPercentSubmerged value="85.0" />
+			<vecCentreOfMassOffset x="0.0" y="0.20000000298023" z="-0.10000000149012" />
+			<vecInertiaMultiplier x="1.2000000476837" y="1.5" z="1.6000000238419" />
+			<fDriveBiasFront value="0.5" />
+			<nInitialDriveGears value="6" />
+	  <fInitialDriveForce value="0.40000" />
+	  <fDriveInertia value="1.00000" />
+			<fClutchChangeRateScaleUpShift value="10.3" />
+			<fClutchChangeRateScaleDownShift value="7.3" />
+	  <fInitialDriveMaxFlatVel value="200.000000" />
+			<fBrakeForce value="1.1" />
+			<fBrakeBiasFront value="0.5" />
+			<fHandBrakeForce value="0.7" />
+			<fSteeringLock value="42.0" />
+			<fTractionCurveMax value="2.685" />
+			<fTractionCurveMin value="2.35" />
+			<fTractionCurveLateral value="22.5" />
+			<fTractionSpringDeltaMax value="0.15" />
+			<fLowSpeedTractionLossMult value="0.0" />
+			<fCamberStiffnesss value="0.0" />
+			<fTractionBiasFront value="0.485" />
+			<fTractionLossMult value="0.0" />
+			<fSuspensionForce value="2.025" />
+			<fSuspensionCompDamp value="1.0" />
+			<fSuspensionReboundDamp value="1.6" />
+			<fSuspensionUpperLimit value="0.07" />
+			<fSuspensionLowerLimit value="-0.07" />
+			<fSuspensionRaise value="0.0" />
+			<fSuspensionBiasFront value="0.48" />
+			<fAntiRollBarForce value="0.6" />
+			<fAntiRollBarBiasFront value="0.65" />
+			<fRollCentreHeightFront value="0.55" />
+			<fRollCentreHeightRear value="0.55" />
+			<fCollisionDamageMult value="1.0" />
+			<fWeaponDamageMult value="1.0" />
+			<fDeformationDamageMult value="0.8" />
+			<fEngineDamageMult value="1.5" />
+			<fPetrolTankVolume value="65.0" />
+			<fOilVolume value="5.0" />
+			<fSeatOffsetDistX value="0.0" />
+			<fSeatOffsetDistY value="0.0" />
+			<fSeatOffsetDistZ value="0.05" />
+			<nMonetaryValue value="100000" />
+      <strModelFlags>440010</strModelFlags>
+      <strHandlingFlags>2</strHandlingFlags>
+      <strDamageFlags>0</strDamageFlags>
+      <AIHandling>SPORTS_CAR</AIHandling>
+      <SubHandlingData>
+        <Item type="CCarHandlingData">
+          <fBackEndPopUpCarImpulseMult value="0.100000" />
+          <fBackEndPopUpBuildingImpulseMult value="0.050000" />
+          <fBackEndPopUpMaxDeltaSpeed value="0.600000" />
+        </Item>
+        <Item type="NULL" />
+        <Item type="NULL" />
+      </SubHandlingData>
+    </Item>
+  </HandlingData>
+</CHandlingDataMgr>

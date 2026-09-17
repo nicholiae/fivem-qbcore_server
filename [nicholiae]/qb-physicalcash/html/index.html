@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Cash Conversion</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="cashMenu">
+        <div class="header">
+            <h1>💵 Cash Conversion</h1>
+            <p>Convert your digital cash to physical currency</p>
+        </div>
+
+        <div class="content">
+            <div class="info-box">
+                <p>
+                    <strong>How it works:</strong><br>
+                    Enter the amount you want to convert. Your digital cash will be converted to a physical item that you can trade, store, or convert back at any time.
+                </p>
+            </div>
+
+            <div class="input-group">
+                <label for="amountInput">Amount to Convert</label>
+                <div class="input-wrapper">
+                    <span class="dollar-sign">$</span>
+                    <input 
+                        type="number" 
+                        id="amountInput" 
+                        placeholder="Enter amount" 
+                        min="1"
+                        step="1"
+                    >
+                </div>
+                <div class="input-info">
+                    <span>Min: $<span id="minAmount">1</span></span>
+                    <span class="max-amount">Max: $<span id="maxAmount">100000</span></span>
+                </div>
+            </div>
+
+            <div class="quick-amounts">
+                <button class="quick-amount-btn" data-amount="100">$100</button>
+                <button class="quick-amount-btn" data-amount="500">$500</button>
+                <button class="quick-amount-btn" data-amount="1000">$1K</button>
+                <button class="quick-amount-btn" data-amount="5000">$5K</button>
+                <button class="quick-amount-btn" data-amount="10000">$10K</button>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+
+            <div class="loading" id="loadingIndicator">
+                <div class="loading-spinner"></div>
+                <p>Processing conversion...</p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" id="convertBtn">Convert to Physical</button>
+            <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

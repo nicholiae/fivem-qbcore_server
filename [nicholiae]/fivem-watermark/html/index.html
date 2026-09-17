@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Watermark</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Watermark Container -->
+    <div id="watermark-container" class="watermark-container">
+        <div class="watermark" id="watermark">
+            <img src="img/serverimage.png" alt="Server Logo" id="watermark-img">
+            <span class="watermark-text">= ServerInfo</span>
+        </div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- Menu Container -->
+    <div class="menu-container" id="menu-container">
+        <!-- Header -->
+        <div class="menu-header">
+            <div class="header-logo">
+                <img src="img/serverimage.png" alt="Server Logo" id="menu-logo">
+            </div>
+			<a href="https://discord.gg/VTBxU2X5du" target="_blank" class="discord-btn">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+				</svg>
+				Join Discord
+			</a>
+            <div class="header-title">
+                <h1 id="server-name">StarValley RP</h1>
+                <p class="server-desc" id="server-desc">Welcome to StarValley RP!</p>
+            </div>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav" id="tabs-nav">
+            <button class="tab-btn active" data-tab="rules">
+                <span class="tab-icon">📋</span>
+                <span class="tab-name">Rules</span>
+            </button>
+            <button class="tab-btn" data-tab="info">
+                <span class="tab-icon">ℹ️</span>
+                <span class="tab-name">Info</span>
+            </button>
+            <button class="tab-btn" data-tab="staff">
+                <span class="tab-icon">👥</span>
+                <span class="tab-name">Staff</span>
+            </button>
+            <button class="tab-btn" data-tab="commands">
+                <span class="tab-icon">⚡</span>
+                <span class="tab-name">Commands</span>
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="tab-content">
+            <!-- Rules Tab -->
+            <div class="tab-pane active" id="rules-tab">
+                <div class="section-header">
+                    <h2>📋 Server Rules</h2>
+                </div>
+                <p class="rules-intro">General RP rules apply but the following list is specific to StarValley RP</p>
+                <div class="rules-list" id="rules-list">
+                    <div class="rule-item">
+                        <p class="rule-description">RP is the purpose of the server, this means you are always in character when inside the city.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">No outside chats are to be used for city related game play. Our discord is the exception, players may hang out in our voice chats for OOC chatter, ensure this OOC does not disturb the RP of other players near you.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">We do not wish to police your RP, treat every situation like you would Real Life and you are in line with our vision of what RP should be. This means you don't shoot at cops unless the RP situation calls for it, a traffic stop is not one of those situations for example.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Feuds are ok with us, but don't take it out of the city.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">While RP has many different faces it is RP, not drama, Lets have fun while RPing, of course not everyone will always be happy with one another, keep it fun.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Meta-Gaming is strictly not allowed. While this definition floats from person to person it is pretty simple to us, using anything acquired outside the city will be considered Meta-Gaming, defensive arguments for Meta-Gaming situations will NOT be heard, the guilty party will be warned, fined, temp or perma banned dependent on staff vote.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">We will not tell you how to RP. With that said, If your RP is considered harassment by the recipient we will step in if the situation calls for it.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Sexual harrassment of any kind RP or no RP will be met with a perma ban no exceptions.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Prisoners are allowed if the RP situation calls for it. They are not slaves and are still to be treated with respect. Torture RP, unless consensual, will NOT be tolerated and treated same as harassments.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Heists are 100% a PVP situation. That being said, outside players can either help or hinder a heist, helping should always be met with a cut of the booty. Be kind you might make friends so you don't heist alone.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">If you act like a child, we reserve the right to treat you like a child, if staff instruct you to take a break or Time Out, log off, cool off, and come back to having fun. We are not here to punish you just to make sure everyone is enjoying themselves.</p>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-title" style="color: var(--accent-color); margin-bottom: 8px;">SPEED LIMITS</div>
+                        <p class="rule-description">Inner City Streets - 70<br>HighWays - 150<br>FreeWays - 200<br><br>Breaking the Speed Limit will entitle the driver to citations and possible jail time.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Probable cause is still required for search and seizures.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Breaking the Speed Limit does not entitle Search and Seizure unless wreckless driving is involved.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Rules of Escalation apply, Talking Shit does not warrant weapons. Make Fist Fights Great Again!</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Politics do NOT exist inside StarValley.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Staff Members occasionally have to use admin powers to answer tickets, in this event we apologize ahead of time if this disrupts your RP, while we respect everyone's RP, this is still a game and modded at that, when things break let Staff work unhindered so everyone can get back to playing the game.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">/help is forbidden inside an Active RP Situation. If you die in this type of situation wait for someone to help you or the situation to conclude before calling for the AI doc. AI Doctors in the middle of an RP situation are fair game for other players to kill.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Outside of an Active RP Situation, if you are found killing an AI Doctor to prevent another player from respawning this will be treated as trolling and harassment. Not only are you preventing players from playing the game you are also causing issues in the server that requires restarting of specific resources to fix. Repeated violations of this rule will result in a suspension and further violations will grant a ban to the player.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">There are several guns available both illegal and legal. Any and all attachments to weapons will render the weapon illegal regardless of the weapon.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Calling a doctor, AI or Player, will immediately apply the "New Life Rule" to your character. To keep all your memories a player must revive at the hospital.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">We encourage organic role play, what this means is events that are played out must have a natural flow from one event to the next.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Stealing vehicles of any kind is allowed, stealing an official vehicle comes with extra punishment and forfeits all the players rights to privacy, meaning anything and everything on your character is capable of search and seizure.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">If you or your property is found within half a block from an active crime scene you will be considered a person of interest in that crime. Expect police presence and questioning.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Rules of escalation apply at all times! This means there must be a natural and easy to follow set of events that lead to the shooting. Shooting should not be the first thing that you do when ANYONE arrives on scene.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Treat RP in here like real life situations and you will do just fine. The only situations that call for shots fired immediately upon arrival is High Stakes heists where you have already opened fire on Official Personnel.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">In a true RP world, all characters, both player controlled and NPC are considered to be ALIVE. Just because a player is near by a scene does not make them guilty. Question with evidence for best investigative results.</p>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-title" style="color: var(--accent-color); margin-bottom: 8px;">INACTIVITY RULES</div>
+                        <p class="rule-description">A player is considered inactive when they miss 2 consecutive town hall meetings. When moved to inactive status this forfeits ALL homes, businesses, properties and 1of1s. An inactive player will retain their vehicles, money, personal inventory, and their apartment. Compensation for loss of assets due to inactivity is NOT provided.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Inactivity is classified as 4 consecutive weeks of little to no game play. Extended inactivity is 6 consecutive weeks. If a player is in Extended Inactivity their character is subject to automatic removal by the system.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">While StarValley is in state of Emergency Do Not Do Any Criminal Activities. This means no Criminal Activities 30 minutes Before Server Restart.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Players can only rob other players under a surrender scenario, robbing a player after killing them is forbidden, killing still triggers a new life rule and memory of past events are lost.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">Engine swaps render the vehicle illegal, if a police officer identifies the car as having an engine swap, it permits the police to impound the vehicle for $1,000,000 bail fee and factory resets the vehicle of all mods.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">If a cop finds themselves outnumbered on a scene (1 cop responding to 2+ criminals), this allows the cop to respond with an armored vehicle. A tank is only permitted for chief of police and assistant chief.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">All traffic lights are synchronized. Running red lights, stop signs or any traffic violations will be enforced. Failure to stop results in citation, points to your license, and possible suspension or impounding.</p>
+                    </div>
+                    <div class="rule-item">
+                        <p class="rule-description">All vehicles have indicators for turning. Failure to signal a turn can result in fines, points, license suspension or impounding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Tab -->
+            <div class="tab-pane" id="info-tab">
+                <div class="section-header">
+                    <h2>ℹ️ Server Information</h2>
+                </div>
+                <div class="info-content">
+                    <div class="info-section">
+                        <h3>Getting Started</h3>
+                        <p class="info-text">Welcome to StarValley RP! Create your character, choose an apartment to start in, and start your journey in our city. Startout jobs at City Hall!</p>
+                    </div>
+                    <div class="info-section">
+                        <h3>Key Bindings</h3>
+                        <div class="keybinding-list">
+                            <div class="keybinding-item">
+                                <span class="keybinding-key">F1</span>
+                                <span class="keybinding-action">Radial Menu</span>
+                            </div>
+                            <div class="keybinding-item">
+                                <span class="keybinding-key">F2</span>
+                                <span class="keybinding-action">Iphone</span>
+                            </div>
+                            <div class="keybinding-item">
+                                <span class="keybinding-key">M</span>
+                                <span class="keybinding-action">Android Phone</span>
+                            </div>
+                            <div class="keybinding-item">
+                                <span class="keybinding-key">Tab</span>
+                                <span class="keybinding-action">Inventory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Tab -->
+            <div class="tab-pane" id="staff-tab">
+                <div class="section-header">
+                    <h2>👥 Staff Team</h2>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-avatar">👔</div>
+                        <h4 class="staff-name">Nicholiae</h4>
+                        <p class="staff-role">Owner</p>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar">🛡️</div>
+                        <h4 class="staff-name">FreeSmoke</h4>
+                        <p class="staff-role">Administrator</p>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar">⚔️</div>
+                        <h4 class="staff-name">Bones</h4>
+                        <p class="staff-role">Moderator</p>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar">🎯</div>
+                        <h4 class="staff-name">Sheriff</h4>
+                        <p class="staff-role">Support Team</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commands Tab -->
+            <div class="tab-pane" id="commands-tab">
+                <div class="section-header">
+                    <h2>⚡ Useful Commands</h2>
+                </div>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code class="command-syntax">/e [emotename]</code>
+                        <span class="command-desc">Perform an emote from the F3 emote menu</span>
+                    </div>
+                    <div class="command-item">
+                        <code class="command-syntax">/help </code>
+                        <span class="command-desc">Pay a fee and call an NPC doctor to pick you up</span>
+                    </div>
+                    <div class="command-item">
+                        <code class="command-syntax">/ooc [message]</code>
+                        <span class="command-desc">Out of character chat</span>
+                    </div>
+                    <div class="command-item">
+                        <code class="command-syntax">/report [message]</code>
+                        <span class="command-desc">Report an issue to staff</span>
+                    </div>
+                    <div class="command-item">
+                        <code class="command-syntax">/refreshskin</code>
+                        <span class="command-desc">Reload your character</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="menu-footer">
+            <p>Press <kbd>ESC</kbd> to close</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* Tax App Styles for QB-Phone */
+
+.taxes-app {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    overflow-y: auto;
+}
+
+.taxes-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.taxes-header-icon {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.taxes-header h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.taxes-status-banner {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.taxes-status-banner.success {
+    background: rgba(76, 175, 80, 0.2);
+    border-bottom-color: #4CAF50;
+}
+
+.taxes-status-banner.warning {
+    background: rgba(255, 152, 0, 0.2);
+    border-bottom-color: #FF9800;
+}
+
+.taxes-status-banner.danger {
+    background: rgba(244, 67, 54, 0.2);
+    border-bottom-color: #F44336;
+}
+
+.taxes-status-icon {
+    font-size: 20px;
+    color: white;
+}
+
+.taxes-status-text {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.taxes-content {
+    padding: 20px;
+}
+
+.taxes-summary-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.taxes-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.taxes-card-header h3 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.taxes-month-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.taxes-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.taxes-summary-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.taxes-summary-item.highlight {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    grid-column: span 2;
+}
+
+.taxes-summary-item .label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.taxes-summary-item .value {
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.taxes-pay-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.taxes-pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.taxes-pay-btn:disabled {
+    background: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.taxes-breakdown-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.taxes-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.taxes-section-header h3 {
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.taxes-toggle-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.taxes-toggle-btn.active {
+    transform: rotate(180deg);
+}
+
+.taxes-breakdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.taxes-breakdown-content.active {
+    max-height: 1000px;
+}
+
+.taxes-breakdown-category {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.taxes-category-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.taxes-category-header i {
+    font-size: 18px;
+    color: #667eea;
+}
+
+.taxes-category-header h4 {
+    flex: 1;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.taxes-category-total {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.taxes-category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.taxes-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: white;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.taxes-item-name {
+    color: #555;
+    font-weight: 500;
+}
+
+.taxes-item-value {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.taxes-empty-state {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
+
+.taxes-info-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+}
+
+.taxes-info-section h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.taxes-info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.taxes-info-section li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.taxes-info-section li:before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    font-size: 14px;
+}
+
+/* Loading State */
+.taxes-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+}
+
+.taxes-loading i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.taxes-loading-text {
+    font-size: 14px;
+    font-weight: 500;
+}

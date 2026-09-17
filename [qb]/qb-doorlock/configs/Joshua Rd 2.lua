@@ -1,0 +1,76 @@
+
+
+-- Main Gate created by Manish
+-- Config.DoorList['Joshua Rd 2-Main Gate'] = {
+    -- authorizedCitizenIDs = { ['AKB31590'] = true },
+    -- doorLabel = 'Gate',
+    -- pickable = true,
+    -- objCoords = vec3(842.249817, 3222.314697, 38.893200),
+    -- fixText = false,
+    -- objYaw = 6.9988822937012,
+    -- doorRate = 1.0,
+    -- distance = 8,
+    -- locked = true,
+    -- objName = 1286535678,
+    -- doorType = 'sliding',
+-- }
+
+-- Front Door created by Manish
+-- Config.DoorList['Joshua Rd 2-Front Door'] = {
+    -- doorRate = 1.0,
+    -- pickable = true,
+    -- doors = {
+        -- {objName = -403433025, objYaw = 0.13663786649704, objCoords = vec3(766.200012, 3411.600098, 63.540001)},
+        -- {objName = 1308911070, objYaw = 0.0065958881750703, objCoords = vec3(768.919983, 3411.594971, 63.540001)}
+    -- },
+    -- authorizedCitizenIDs = { ['AKB31590'] = true },
+    -- doorLabel = 'Door',
+    -- locked = true,
+    -- distance = 3,
+    -- doorType = 'double',
+-- }
+
+-- Garage Door created by Manish
+-- Config.DoorList['Joshua Rd 2-Garage Door'] = {
+    -- authorizedCitizenIDs = { ['AKB31590'] = true },
+    -- doorLabel = 'Garage',
+    -- pickable = true,
+    -- objCoords = vec3(814.780029, 3425.520020, 58.180000),
+    -- fixText = false,
+    -- objYaw = 0.0015601727645844,
+    -- doorRate = 1.0,
+    -- distance = 6,
+    -- locked = true,
+    -- objName = 2052512905,
+    -- doorType = 'door',
+-- }
+
+-- Bedroom Door created by Manish
+-- Config.DoorList['Joshua Rd 2-Bedroom Door'] = {
+    -- objCoords = vec3(756.275024, 3420.360107, 67.525002),
+    -- locked = true,
+    -- fixText = false,
+    -- doorLabel = 'Door',
+    -- objName = 509504073,
+    -- distance = 3,
+    -- objYaw = 360.0,
+    -- authorizedCitizenIDs = { ['AKB31590'] = true },
+    -- doorRate = 1.0,
+    -- doorType = 'door',
+    -- pickable = true,
+-- }
+
+-- Gym Door created by Manish
+-- Config.DoorList['Joshua Rd 2-Gym Door'] = {
+    -- pickable = true,
+    -- fixText = false,
+    -- doorLabel = 'Door',
+    -- doorType = 'door',
+    -- objCoords = vec3(758.840027, 3415.594971, 57.955002),
+    -- distance = 3,
+    -- objName = 509504073,
+    -- objYaw = 270.00012207031,
+    -- doorRate = 1.0,
+    -- locked = true,
+    -- authorizedCitizenIDs = { ['AKB31590'] = true },
+-- }
